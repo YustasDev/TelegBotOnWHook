@@ -1,0 +1,25 @@
+jasypt:
+  encryptor:
+    algorithm: PBEWithMD5AndDES
+    password: ${ENCRYPTION_PASSWORD:}
+    iv-generator-classname: org.jasypt.iv.NoIvGenerator
+
+
+
+bot.name: writeEnglishcorrectly_bot
+bot.token: ENC(yc7BRAEc850e+1Eodf435RNBxigOJgrdpnjZGtMwkHtqRHiSK9Vdl3BhkhpeIeyPX4cvINcurGU=)
+bot.ownerID: 994138843
+
+spring:
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/infoBot
+    username: postgres
+    password: ENC(meZs5HRHLgkbTC6tnK5Yur/vzTwczaNM)
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+
