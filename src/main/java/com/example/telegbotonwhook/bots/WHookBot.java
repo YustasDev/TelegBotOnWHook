@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 @NoArgsConstructor
 public class WHookBot {
 
-    TelegramBot bot = new TelegramBot("6534879689:AAG3w5c8yI-ROGBoKk7BSw1WvEWxo3XExV8");
 
 
 
