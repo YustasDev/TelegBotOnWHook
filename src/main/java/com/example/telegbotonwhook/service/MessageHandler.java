@@ -1,9 +1,19 @@
 package com.example.telegbotonwhook.service;
 
 
+import com.example.telegbotonwhook.exceptions.TooBigVoiceMessageException;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ByteArrayResource;
 import org.springframework.stereotype.Component;
+import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
+import org.telegram.telegrambots.meta.api.objects.Message;
+import org.telegram.telegrambots.meta.api.objects.Voice;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 
 @Component
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)

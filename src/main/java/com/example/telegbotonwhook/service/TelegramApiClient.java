@@ -1,12 +1,25 @@
 package com.example.telegbotonwhook.service;
 
+import com.example.telegbotonwhook.exceptions.TelegramFileNotFoundException;
+import com.example.telegbotonwhook.exceptions.TelegramFileUploadByIdException;
+import com.example.telegbotonwhook.exceptions.TelegramFileUploadException;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.StreamUtils;
 import org.springframework.web.client.RestTemplate;
+import org.telegram.telegrambots.meta.api.objects.ApiResponse;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.MessageFormat;
+import java.util.Objects;
 
 
 @Service

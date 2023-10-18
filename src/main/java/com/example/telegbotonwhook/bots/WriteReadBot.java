@@ -1,9 +1,12 @@
 package com.example.telegbotonwhook.bots;
 
 
+import com.example.telegbotonwhook.exceptions.TooBigVoiceMessageException;
 import com.example.telegbotonwhook.service.MessageHandler;
 import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -15,7 +18,8 @@ import org.telegram.telegrambots.starter.SpringWebhookBot;
 import java.io.IOException;
 
 
-@Data
+@Getter
+@Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class WriteReadBot extends SpringWebhookBot {
 

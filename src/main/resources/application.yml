@@ -10,25 +10,26 @@ telegram:
   bot-name: writeEnglishcorrectly_bot
   bot-token: ENC(yc7BRAEc850e+1Eodf435RNBxigOJgrdpnjZGtMwkHtqRHiSK9Vdl3BhkhpeIeyPX4cvINcurGU=)
   ownerID: 994138843
-  webhook-path: "Адрес вебхука - локально получаем от ngrok"
+  webhook-path: https://4143-104-236-95-26.ngrok-free.app/whreception  #"Адрес вебхука - локально получаем от ngrok"
 server:
   port: 5000
 files:
-  incoming: "префикс названия временных файлов голосовых сообщений - нужен, чтобы найти потом эти временные файлы и удалить их"
-  outgoing: "префикс названия временных файлов .mp3 - нужен, чтобы найти потом эти временные файлы и удалить их"
+  incoming: incoming
+  outgoing: outgoing
 ffmpeg:
-  path: ffmpeg
+  path: /home/progforce/TelegBotOnWHook/src/main/resources/ffmpeg
 schedule:
   cron:
-    delete-temp-files: 0 */10 * ? * *        //крон для удаления временных файлов
+    delete-temp-files: 0 */10 * ? * *        #крон для удаления временных файлов
 message:
   start:
-    picture-file-id: "Telegram-идентификатор картинки, отправляемой пользователю в ответ на команду /start"
-    text: "текст сообщения в ответ на команду /start"
+    picture-file-id:   #"Telegram-идентификатор картинки, отправляемой пользователю в ответ на команду /start"
+    text:  Hi! #"ответ на команду /start"
+    picture-file-path: Ein2.jpg
   too-big-voice:
     text: voice message time limit = 10 minutes
   illegal-message:
-    text: "текст сообщения в ответ на отправку любого типа сообщений, кроме /start и голосовых"
+    text: I'll think about it    #"текст сообщения в ответ на отправку любого типа сообщений, кроме /start и голосовых"
   wtf:
     text: something went wrong (Internal Server Error)
 

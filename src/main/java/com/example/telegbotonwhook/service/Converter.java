@@ -5,6 +5,7 @@ import net.bramp.ffmpeg.FFmpeg;
 import net.bramp.ffmpeg.FFmpegExecutor;
 import net.bramp.ffmpeg.builder.FFmpegBuilder;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -33,7 +34,9 @@ public class Converter {
 
         try {
             executor.createTwoPassJob(builder).run();
-        } catch (IllegalArgumentException ignored) {//отлавливаем и игнорируем ошибку, возникающую из-за отсутствия видеоряда (конвертер предназначен для видео)
+        } catch (IllegalArgumentException ignored) {
+            //отлавливаем и игнорируем ошибку,
+            // возникающую из-за отсутствия видеоряда (конвертер предназначен для видео)
         }
     }
 }
